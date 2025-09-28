@@ -1,6 +1,6 @@
-# 🔍 Simple Semantic Search Engine
+# 🔍 Semantic Search App
 
-This project is a simple **AI-powered** semantic search engine built with [Sentence-BERT](https://www.sbert.net/).  
+This project is a simple **AI-powered** semantic search app built with [Sentence-BERT](https://www.sbert.net/).  
 It finds the most relevant text passages based on a user query using **Natural Language Processing (NLP)** techniques.  
 The AI model understands the *meaning* of text, not just keywords, and therefore produces more intelligent search results.
 
@@ -86,7 +86,7 @@ Simply add `.txt` files in your language of choice to the `data/` folder and the
 ## 📊 Example
 
 ```text
-🔍 Simple Semantic Search Engine
+🔍 Semantic Search App
 
 Enter query (or 'quit' to exit): phishing
 
