@@ -16,7 +16,7 @@ embedder = Embedder()
 doc_embeddings = embedder(documents)
 search_engine = SemanticSearch(doc_embeddings, documents)
 
-print("🔍 Simple Semantic Search Engine")
+print("🔍 Semantic Search App")
 while True:
     query = input("\nEnter query (or 'quit' to exit): ")
     if query.lower() == "quit":
