@@ -6,7 +6,7 @@ import nltk
 nltk.download("punkt", quiet=True)
 nltk.download("punkt_tab", quiet=True)
 
-file_path = "./data/text.txt"
+file_path = "./data/text.md"
 
 with open(file_path, "r", encoding="utf-8") as f:
     content = f.read()

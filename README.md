@@ -11,7 +11,7 @@ It’s a prototype showing how modern NLP can make search more accurate, flexibl
 ```text
 semantic-search-app/
 ├── data/                 # Text files for searching
-│   └── text.txt
+│   └── text.md
 │
 ├── src/                   # Source code
 │   ├── embedder.py        # Wrapper for Sentence-BERT embeddings
@@ -35,14 +35,14 @@ cd SemanticSearchApp
 
 2. Set up a virtual environment and install dependencies:
 
-   ```bash
-   python -m venv venv
-   source venv/bin/activate
-   pip install -r requirements.txt
-   ```
+```bash
+python -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+```
 
 3. Add your text files to the `./data/` folder.
-The repo comes with a sample text.txt you can replace or extend.
+The repo comes with a sample text.md you can replace or extend.
 
 ## 🚀 Usage
 
@@ -90,7 +90,6 @@ Type a query, and the app will return the passages it finds most semantically re
 
 ## 🌍 Language Support
 - Uses the multilingual model all-MiniLM-L6-v2, supporting Danish, English, and many other languages.
-- Add .txt files in your preferred language to the data/ folder, and they’ll become searchable.
 
 ## 📊 Example
 
