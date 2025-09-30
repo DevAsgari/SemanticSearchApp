@@ -1,3 +1,5 @@
+# 🔍 Semantic Search App
+
 ```text
 🔍 Semantic Search App
 
