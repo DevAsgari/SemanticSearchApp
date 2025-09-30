@@ -1,5 +1,7 @@
 # 🔍 Semantic Search App
 
+![CLI interface](image.png)
+
 A prototype AI-powered search app that finds text based on meaning, not just keywords.  
 Built with **Sentence-BERT** and **FAISS**, it turns text into vector embeddings and finds the passages that are semantically closest to your query.  
 It’s a prototype showing how modern NLP can make search more accurate, flexible, and human-like. 
