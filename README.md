@@ -1,8 +1,8 @@
 # 🔍 Semantic Search App
 
-This project is a simple **AI-powered** semantic search app built with [Sentence-BERT](https://www.sbert.net/).  
-It finds the most relevant text passages based on a user query using **Natural Language Processing (NLP)** techniques.  
-The AI model understands the *meaning* of text, not just keywords, and therefore produces more intelligent search results.
+A prototype AI-powered search app that finds text based on meaning, not just keywords.  
+Built with **Sentence-BERT** and **FAISS**, it turns text into vector embeddings and finds the passages that are semantically closest to your query.  
+It’s a prototype showing how modern NLP can make search more accurate, flexible, and human-like. 
 
 ---
 
@@ -10,13 +10,12 @@ The AI model understands the *meaning* of text, not just keywords, and therefore
 
 ```text
 semantic-search-app/
-├── data/                  # Text files for searching
-│   ├── text.txt
-│   └── it_security.txt
+├── data/                 # Text files for searching
+│   └── text.txt
 │
 ├── src/                   # Source code
 │   ├── embedder.py        # Wrapper for Sentence-BERT embeddings
-│   ├── search.py          # Semantic search with cosine similarity
+│   ├── search.py          # Semantic search using FAISS
 │   └── main.py            # Simple CLI search engine
 │
 ├── requirements.txt       # Python dependencies
@@ -29,12 +28,12 @@ semantic-search-app/
 
 1. Clone the project:
 
-   ```bash
-   git clone https://github.com/<your-repo>/semantic-search-app.git
-   cd semantic-search-app
-   ```
+```bash
+git clone https://github.com/<your-repo>/SemanticSearchApp.git
+cd SemanticSearchApp
+```
 
-2. Create a virtual environment and install dependencies:
+2. Set up a virtual environment and install dependencies:
 
    ```bash
    python -m venv venv
@@ -42,10 +41,8 @@ semantic-search-app/
    pip install -r requirements.txt
    ```
 
-3. Add a `text.txt` file to the `./data/` folder.  
-   The project already includes a sample file (`text.txt`), which you can replace or extend with your own text.
-
----
+3. Add your text files to the `./data/` folder.
+The repo comes with a sample text.txt you can replace or extend.
 
 ## 🚀 Usage
 
@@ -55,33 +52,45 @@ Run a search from the project root:
 python src/main.py
 ```
 
+Type a query, and the app will return the passages it finds most semantically relevant.
+
 ---
 
 ## 🧠 How the AI Works
+### 1. Embeddings (Sentence-BERT)
+- Both texts and queries are converted into vector representations.
+- These embeddings capture meaning rather than just word overlap.
 
-This project uses **Sentence-BERT**, a type of **transformer-based AI model** (built on top of BERT, a state-of-the-art NLP model).  
-Sentence-BERT is designed for **semantic similarity** tasks – meaning it can tell whether two pieces of text *mean the same thing*, even if they use different words.
+### 2. Vector Index (FAISS)
+- All embeddings are stored in a FAISS index for fast similarity search.
+- Given a query, FAISS retrieves the nearest neighbors, the most relevant passages.
 
-Here’s what happens under the hood:
+### 3. Semantic Search
+- Results are ranked by semantic closeness, not keywords.
+- This makes it possible to find passages that “mean the same thing,” even if they use different words.
 
-1. **AI Model (Sentence-BERT)**  
-   - The text and user queries are converted into **embeddings**: numerical vector representations in a high-dimensional space.  
-   - These embeddings capture semantic meaning, not just surface-level keywords.
+## 💡 Why It Matters
+- Semantic search is already shaping how we interact with information:
+- Customer Support → find the most relevant answers from large FAQ collections.
+- Compliance & Legal → quickly navigate regulatory documents.
+- Knowledge Management → make internal documentation easier to search.
+- This app is a simple prototype, but it demonstrates how AI can improve everyday tasks by focusing on meaning.
 
-2. **Similarity Measure (Cosine Similarity)**  
-   - Once all texts are represented as vectors, we compute the **cosine similarity** between the query vector and the document vectors.  
-   - A higher score (closer to `1.0`) means the AI judges the texts to be more semantically related.
+## 🛠️ Tech Stack
+- Python
+- HuggingFace Sentence-BERT
+- FAISS for similarity search
+- NLTK for text preprocessing
 
-This is what makes the search *AI-powered*: it uses a **pre-trained neural network model** to understand language meaning, instead of relying on keyword matching.
-
----
+## ✨ Future Improvements
+- Add a web interface
+- Scale to larger datasets and optimize retrieval performance
+- Extend with RAG (Retrieval-Augmented Generation) to combine search and generative AI
+- Add evaluation metrics to measure retrieval quality
 
 ## 🌍 Language Support
-
-The model **all-MiniLM-L6-v2** is **multilingual**, meaning it supports **Danish**, **English**, and many other languages.  
-Simply add `.txt` files in your language of choice to the `data/` folder and the AI will make them searchable.
-
----
+- Uses the multilingual model all-MiniLM-L6-v2, supporting Danish, English, and many other languages.
+- Add .txt files in your preferred language to the data/ folder, and they’ll become searchable.
 
 ## 📊 Example
 
